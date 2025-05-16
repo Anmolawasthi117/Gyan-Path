@@ -75,11 +75,14 @@ const addNode = asyncHandler(async (req, res) => {
     connections: connections || [],
   });
 
+  // Emit nodeUpdate
+  req.io.emit("nodeUpdate", node);
+
   return res.status(201).json(new ApiResponse(201, node, "Node created successfully"));
 });
 
 // Update node
- const updateNode = asyncHandler(async (req, res) => {
+const updateNode = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const { name, coordinates, type, connections } = req.body;
 
@@ -96,6 +99,9 @@ const addNode = asyncHandler(async (req, res) => {
   node.connections = connections || node.connections;
 
   await node.save();
+
+  // Emit nodeUpdate
+  req.io.emit("nodeUpdate", node);
 
   return res.status(200).json(new ApiResponse(200, node, "Node updated successfully"));
 });
@@ -117,9 +123,13 @@ const deleteNode = asyncHandler(async (req, res) => {
     { $pull: { connections: { nodeId: id } } }
   );
 
+  // Emit nodeUpdate
+  req.io.emit("nodeUpdate", { nodeId: id, deleted: true });
+
   return res.status(200).json(new ApiResponse(200, null, "Node deleted successfully"));
 });
 
+// Search nodes
 const searchNodes = asyncHandler(async (req, res) => {
   const { name } = req.query;
 
@@ -133,5 +143,4 @@ const searchNodes = asyncHandler(async (req, res) => {
     .json(new ApiResponse(200, nodes, "Nodes found successfully"));
 });
 
-export { getAllNodes, getNodeById, getRoute, addNode, updateNode, deleteNode,searchNodes, };
-
+export { getAllNodes, getNodeById, getRoute, addNode, updateNode, deleteNode, searchNodes };
