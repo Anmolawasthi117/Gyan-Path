@@ -1,8 +1,3 @@
-It seems like I can’t do more advanced data analysis right now. Please try again later.
-
-However, I’ve drafted the complete professional `README.md` content for your **GyanPath** project below. You can copy and paste it directly into your project’s `README.md` file:
-
----
 
 # GyanPath 🧭
 
