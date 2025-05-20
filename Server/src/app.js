@@ -3,15 +3,15 @@ import cors from "cors";
 import logger from "./utils/logger.js";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
-import healthcheckRouter from "./routes/healthcheck.routes.js";
 import mapRouter from "./routes/map.routes.js";
 import authRouter from "./routes/auth.routes.js";
+import { healthcheack } from "./controllers/healthcheack.controller.js";
 import { Server } from "socket.io";
 import http from "http";
 import initializeSocket from "./utils/socket.js";
 
 const app = express();
-const server = http.createServer(app); // Create HTTP server
+const server = http.createServer(app); 
 const io = new Server(server, {
   cors: {
     origin: process.env.CORS_ORIGIN || "http://localhost:3000",
@@ -59,7 +59,7 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/healthcheck", healthcheckRouter);
+app.use("/api/v1/healthcheck", healthcheack);
 app.use("/api/v1/map", mapRouter);
 
 export { app, server };
