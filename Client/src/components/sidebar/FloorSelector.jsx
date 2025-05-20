@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { setCurrentFloor } from '../../redux/slices/floorSlice';
+import { setCurrentFloor } from '../../store/slices/floorSlice.js';
 
 const FloorSelector = () => {
   const dispatch = useDispatch();

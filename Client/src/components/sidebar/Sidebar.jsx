@@ -1,9 +1,9 @@
 import { useState } from 'react';
    import { useDispatch, useSelector } from 'react-redux';
-   import { calculateRoute, startNavigation } from '../../redux/slices/routeSlice';
-   import SearchBar from '../search/SearchBar';
-   import Button from '../common/Button';
-   import Input from '../common/InputBox';
+   import { calculateRoute, startNavigation } from '../../store/redux/slices/routeSlice.js';
+   import SearchBar from '../search/SearchBar.jsx';
+   import Button from '../common/Button.jsx';
+   import Input from '../common/InputBox.jsx';
 
    const Sidebar = ({ onToggle }) => {
      const [isOpen, setIsOpen] = useState(false);

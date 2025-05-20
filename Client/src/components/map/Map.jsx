@@ -2,11 +2,11 @@ import { useEffect, useRef } from 'react';
    import { useSelector, useDispatch } from 'react-redux';
    import L from 'leaflet';
    import 'leaflet/dist/leaflet.css';
-   import { setUserPosition } from '../../redux/slices/routeSlice';
-   import socket from '../../services/socket';
-   import Marker from './Marker';
-   import Polyline from './Polyline';
-   import UserMarker from '../navigation/UserMarker';
+   import { setUserPosition } from '../../store/slices/routeSlice.js';
+   import socket from '../../services/socket.js';
+   import Marker from './Marker.jsx';
+   import Polyline from './Polyline.jsx';
+   import UserMarker from '../navigation/UserMarker.jsx';
 
    // Fix Leaflet icon issue
    delete L.Icon.Default.prototype._getIconUrl;

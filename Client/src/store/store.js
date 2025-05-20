@@ -5,7 +5,7 @@ import floorReducer from './slices/floorSlice';
 
 export const store = configureStore({
   reducer: {
-    nodes: nodeReducer,
+    node: nodeReducer,
     route: routeReducer,
     floor: floorReducer,
   },

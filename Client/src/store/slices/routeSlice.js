@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-   import { calculateRoute } from '../../services/api';
+   import { calculateRoute } from '../../services/api.js';
 
    export const calculateRoute = createAsyncThunk('route/calculateRoute', async ({ startNodeId, endNodeId }) => {
      const { data } = await calculateRoute({ startNodeId, endNodeId });

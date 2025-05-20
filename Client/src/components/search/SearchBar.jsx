@@ -1,10 +1,10 @@
   import { useState, useEffect } from 'react';
   import { useDispatch, useSelector } from 'react-redux';
-  import { searchNodes } from '../../redux/slices/nodeSlice';
-  import Spinner from '../common/Spinner';
-  import SearchResult from './SearchResult';
-  import useDebounce from '../../hooks/useDebounce';
-  import InputBox from '../common/InputBox';
+  import { searchNodes } from '../../store/redux/slices/nodeSlice.js';
+  import Spinner from '../common/spinner.jsx';
+  import SearchResult from './SearchResult.jsx';
+  import useDebounce from '../../hooks/useDebounce.js';
+  import InputBox from '../common/InputBox.jsx';
 
    const SearchBar = ({ onSelectNode }) => {
      const [query, setQuery] = useState('');

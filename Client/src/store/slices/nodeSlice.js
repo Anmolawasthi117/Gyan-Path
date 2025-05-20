@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchNodesApi, searchNodesApi } from '../services/api';
+import { fetchNodesApi, searchNodesApi } from '../../services/api.js';
 
 export const fetchNodes = createAsyncThunk('node/fetchNodes', async () => {
   const { data } = await fetchNodesApi();

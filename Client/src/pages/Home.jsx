@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
    import { useDispatch, useSelector } from 'react-redux';
-   import Map from '../components/map/Map';
-   import SearchBar from '../components/search/SearchBar';
-   import Sidebar from '../components/sidebar/Sidebar';
-   import FloorSelector from '../components/sidebar/FloorSelector';
-   import Navigation from '../components/navigation/Navigation';
-   import { fetchNodes, updateNode } from '../redux/slices/nodeSlice';
-   import socket from '../services/socket';
+   import Map from '../components/map/Map.jsx';
+   import SearchBar from '../components/search/SearchBar.jsx';
+   import Sidebar from '../components/sidebar/Sidebar.jsx';
+   import FloorSelector from '../components/sidebar/FloorSelector.jsx';
+   import Navigation from '../components/navigation/Nevigation.jsx';
+   import { fetchNodes, updateNode } from '../store/slices/nodeSlice.js';
+   import socket from '../services/socket.js';
 
    const Home = () => {
      const dispatch = useDispatch();

@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
    import { useSelector, useDispatch } from 'react-redux';
-   import { nextStep, exitNavigation, setUserPosition } from '../../redux/slices/routeSlice';
-   import socket from '../../services/socket';
-   import useGeolocation from '../../hooks/useGeolocation';
-   import RouteStep from './RouteStep';
-   import Button from '../common/Button';
+   import { nextStep, exitNavigation, setUserPosition } from '../../store/redux/slices/routeSlice.js';
+   import socket from '../../services/socket.js';
+   import useGeolocation from '../../hooks/useGeolocation.js';
+   import RouteStep from './RouteStep.jsx';
+   import Button from '../common/Button.jsx';
 
    const Navigation = () => {
      const dispatch = useDispatch();
